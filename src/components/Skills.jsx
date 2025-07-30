@@ -24,22 +24,22 @@ export const Skills = () => {
   //   state.languageList.sort((firstLang, nextLang) => nextLang.count - firstLang.count)
   // )
 
-  // const generateLanguageCountObj = (allLanguageList) => {
-  //   const notNullLanguageList = allLanguageList.filter(language => language != null);
-  //   const uniqueLanguageList = [...new Set(notNullLanguageList)];
+  const generateLanguageCountObj = (allLanguageList) => {
+    const notNullLanguageList = allLanguageList.filter(language => language != null);
+    const uniqueLanguageList = [...new Set(notNullLanguageList)];
 
-  //   return uniqueLanguageList.map(item => {
-  //     return {
-  //       language: item,
-  //       count: allLanguageList.filter(language => language === item).length
-  //     }
-  //   });
-  // };
+    return uniqueLanguageList.map(item => {
+      return {
+        language: item,
+        count: allLanguageList.filter(language => language === item).length
+      }
+    });
+  };
 
-  // const convertCountToPercentage = (count) => {
-  //   if (count > 10) { return 100; }
-  //   return count * 10;
-  // };
+  const convertCountToPercentage = (count) => {
+    if (count > 10) { return 100; }
+    return count * 10;
+  };
   const [sortedLanguageList, fetchRequestState, converseCountToPercentage] = useSkills();
   return (
     <div id="skills">
